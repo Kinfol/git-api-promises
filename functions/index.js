@@ -10,9 +10,8 @@ const urls = [
 
 (async function main() {
     try {
-
     // loop over and call all the endpoints
-    const result = await Promise.all(urls.map((url) => {
+    const [profile, repos, subs] = await Promise.all(urls.map((url) => {
         return request({
             url,
             method: 'GET',
@@ -21,11 +20,11 @@ const urls = [
             }
         });
     }));
-    
-    console.log('done the loop')
-    console.log('res 1', result[0]);
-    console.log('res 1', result[1]);
 
+    console.log('result', profile)
+    console.log('repos', repos)
+    console.log('repos', subs)
+    console.log('done the loop')
     } catch (e) {
     console.log(e.message);
 }
