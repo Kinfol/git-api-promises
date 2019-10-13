@@ -4,7 +4,15 @@ const ua = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (K
 
 (async function main() {
     try {
-        console.log('hello')
+        const res = await request({
+            url: `${endpoint}/kinfol`,
+            method: 'GET',
+            headers: {
+                'User-Agent': ua
+            }
+        });
+        console.log(res);
+
     } catch (e) {
     console.log(e.message);
 }
