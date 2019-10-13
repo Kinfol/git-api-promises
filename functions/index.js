@@ -7,7 +7,6 @@ const urls = [
     `${endpoint}/Kinfol/repos`,
     `${endpoint}/Kinfol/subscriptions`,
 ];
-
 (async function main() {
     try {
     // loop over and call all the endpoints
@@ -20,7 +19,6 @@ const urls = [
             }
         });
     }));
-
     console.log('result', profile)
     console.log('repos', repos)
     console.log('repos', subs)
