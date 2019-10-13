@@ -13,7 +13,7 @@ const urls = [
 
     // loop over and call all the endpoints
     await Promise.all(urls.map((url) => {
-        const promise = request({
+        return request({
             url,
             method: 'GET',
             headers: {
@@ -21,8 +21,6 @@ const urls = [
             }
             
         });
-        console.log('done', url)
-        return promise;
     }));
     
     console.log('done the loop')
