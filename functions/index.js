@@ -12,9 +12,10 @@ const urls = [
     try {
 
     // loop over and call all the endpoints
-    urls.forEach(async(url) => {
+    for(let i = 0; i < urls.length; i++) {
+        const url = urls[i];
         // do something else when we're done
-        try {
+        
         await request({
             url,
             method: 'GET',
@@ -23,10 +24,8 @@ const urls = [
             }
         });
         console.log('done', url);
-        } catch(e){
-            console.log(e.message);
-        }
-    });
+        
+    };
 
     console.log('done the loop')
 
