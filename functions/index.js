@@ -12,18 +12,19 @@ const urls = [
     try {
 
     // loop over and call all the endpoints
-    await Promise.all(urls.map((url) => {
+    const result = await Promise.all(urls.map((url) => {
         return request({
             url,
             method: 'GET',
             headers: {
                 'User-Agent': ua
             }
-            
         });
     }));
     
     console.log('done the loop')
+    console.log('res 1', result[0]);
+    console.log('res 1', result[1]);
 
     } catch (e) {
     console.log(e.message);
